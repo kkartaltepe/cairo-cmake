@@ -75,6 +75,8 @@ set(cairo_private
     cairo-surface-snapshot-inline.h
     cairo-surface-snapshot-private.h
     cairo-surface-wrapper-private.h
+    cairo-tag-attributes-private.h
+    cairo-tag-stack-private.h
     cairo-time-private.h
     cairo-types-private.h
     cairo-traps-private.h
@@ -178,6 +180,8 @@ set(cairo_sources
     cairo-surface-snapshot.c 
     cairo-surface-subsurface.c 
     cairo-surface-wrapper.c 
+    cairo-tag-attributes.c
+    cairo-tag-stack.c
     cairo-time.c 
     cairo-tor-scan-converter.c 
     cairo-tor22-scan-converter.c 
@@ -230,8 +234,11 @@ set(_cairo_deflate_stream_sources cairo-deflate-stream.c)
 list(APPEND cairo_sources ${_cairo_deflate_stream_sources})
 
 set(cairo_pdf_headers cairo-pdf.h)
-set(cairo_pdf_private cairo-pdf-surface-private.h)
-set(cairo_pdf_sources cairo-pdf-surface.c)
+set(cairo_pdf_private
+    cairo-pdf-surface-private.h)
+set(cairo_pdf_sources
+    cairo-pdf-surface.c
+    cairo-pdf-interchange.c)
 
 set(cairo_svg_headers cairo-svg.h)
 set(cairo_svg_private cairo-svg-surface-private.h)
